@@ -1,0 +1,68 @@
+* Didi BussinesIntelligence Challenge 
+
+/Héctor Emiliano Méndez Medina/
+
+* Requirements: 
+  - python3 
+  - mysql 
+
+* Solution
+
+  If the ~command line~ is used make sure to execute the commands in the
+  correct directory :
+
+** Creating The Database:   
+
+   #+begin_src shell
+   solution/$ mysql <proper credentials> < db_creation.sql
+   #+end_src
+   
+   /Feel free to use the commands in a graphical enviroment./
+ 
+** Populating The Database:
+
+   Execute in the follow order: 
+
+*** Generating the inserts
+    
+    Generating the SQL files to get the inserts.    
+
+    #+begin_src shell
+    solution/$ python3 SQL_visitors_insert.py
+    #+end_src
+
+    #+begin_src shell
+    solution/$ python3 SQL_restaurants_inserts.py 
+    #+end_src
+
+    #+begin_src shell
+    solution/$ python3 SQL_japanesedates_inserts.py 
+    #+end_src
+
+    *Note:* .csv datasets must be in the same directory as the README file.
+
+*** Actual insert queries
+
+    Shell syntax, feel free to use de sql files in a 
+    GUI enviroment.
+
+    #+begin_src shell
+    solution/$ mysql <proper credentials> < populate_restaurants.sql 
+    #+end_src
+
+    # 
+    #+begin_src shell
+    solution/$ mysql <proper credentials>  < populate_visitors.sql 
+    #+end_src
+
+    #
+    #+begin_src shell
+    solution/$ mysql <proper credentials>  < populate_dates.sql
+    #+end_src
+
+*** Solutions
+
+    The queries are in ~solution/queries.sql~, the answer can
+    be found with a comment before them, Ej:
+
+    ~-- n)~ for the n-th answer, the rest were used to get to the proper answer.
